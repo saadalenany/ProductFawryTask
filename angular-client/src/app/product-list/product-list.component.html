@@ -1,0 +1,41 @@
+<div class="panel panel-primary">
+  <mat-card>
+    <div class="panel-heading">
+      <h2>Products</h2>
+    </div>
+    <br>
+    <div class="panel-body">
+      <input type="file" id="formFile" (change)="import($event)" class="form-control btn btn-default" />
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Name Arabic</th>
+            <th>Name English</th>
+            <th>Price</th>
+            <th>Category Arabic</th>
+            <th>Category English</th>
+            <th>Quantity</th>
+            <th>Active</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{product.code}}</td>
+            <td>{{product.nameAr}}</td>
+            <td>{{product.nameEn}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.categoryAr}}</td>
+            <td>{{product.categoryEn}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.active}}</td>
+            <td><button mat-button (click)="deleteProduct(product.id)" class="btn btn-danger">Delete</button>
+                <button mat-button (click)="productDetails(product.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mat-card>
+</div>
