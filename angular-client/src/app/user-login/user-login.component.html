@@ -1,0 +1,22 @@
+<div class="panel panel-primary">
+    <mat-card>
+        <h3>Login</h3>
+
+        <!-- Login Form -->
+        <form>
+            <mat-form-field>
+                <input type="text" id="username" class="fadeIn second" [(ngModel)]="username" name="username"
+                    placeholder="username">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input type="password" id="password" class="fadeIn third" [(ngModel)]="password" name="password"
+                    placeholder="password">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input type="submit" (click)=handleLogin() class="fadeIn fourth" value="Log In">
+            </mat-form-field>
+        </form>
+    </mat-card>
+</div>

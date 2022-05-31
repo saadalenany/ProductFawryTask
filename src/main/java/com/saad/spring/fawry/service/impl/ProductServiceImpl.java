@@ -106,6 +106,7 @@ public class ProductServiceImpl implements ProductService {
                 }
             }
 
+            temp_file.delete();
             return repository.saveAll(createList(rows, sheet.getRow(0).getLastCellNum()));
         } catch (IOException e) {
             throw new RuntimeException(e);

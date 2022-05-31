@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class UserServiceImpl implements UserService {
@@ -26,5 +28,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public User get(String id) {
         return repository.findById(id).orElseThrow(() -> new RuntimeException(String.format("No User found with this ID %s", id)));
+    }
+
+    @Override
+    public List<User> list() {
+        return repository.findAll();
+    }
+
+    @Override
+    public User getByUsername(String username) {
+        return repository.findByUsername(username);
     }
 }
